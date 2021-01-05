@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/06/18 13:20:32.000.900,=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/07/17 11:26:55.000.980,=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/07/29 09:16:02.000.213,=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/08/27 13:16:13.000.931,=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/12/30 15:22:56.000.608,=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2021/01/05 09:43:11.647,=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2021/01/05 09:50:33.998,C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Principal.dfm=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2021/01/05 09:50:33.998,C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Principal.pas=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2021/01/05 09:50:38.779,C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\LoginToken.dproj=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
