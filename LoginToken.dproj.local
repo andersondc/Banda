@@ -7,11 +7,11 @@
     <Transaction>2020/08/27 13:16:13.000.931,=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>2020/12/30 15:22:56.000.608,=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>2021/01/05 09:43:11.000.647,=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2021/01/05 09:50:33.000.998,C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Principal.dfm=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
-    <Transaction>2021/01/05 09:50:33.000.998,C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Principal.pas=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2021/01/05 09:50:38.000.779,C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\LoginToken.dproj=C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
-    <Transaction>2021/01/06 09:39:18.477,=C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Unit1.pas</Transaction>
-    <Transaction>2021/01/06 09:39:57.912,C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\FormPrincipal.dfm=C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Unit1.dfm</Transaction>
-    <Transaction>2021/01/06 09:39:57.912,C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\FormPrincipal.pas=C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Unit1.pas</Transaction>
+    <Transaction>2021/01/05 09:50:33.000.998,C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Principal.dfm</Transaction>
+    <Transaction>2021/01/05 09:50:33.000.998,C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Principal.pas</Transaction>
+    <Transaction>2021/01/05 09:50:38.000.779,C:\Users\dev2\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\LoginToken.dproj</Transaction>
+    <Transaction>2021/01/06 09:39:18.000.477,=C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Unit1.pas</Transaction>
+    <Transaction>2021/01/06 09:39:57.000.912,C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Unit1.pas=C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\FormPrincipal.pas</Transaction>
+    <Transaction>2021/01/06 09:39:57.000.912,C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\Unit1.dfm=C:\Users\dev2\Desktop\Anderson D C\Estudo Login Token\FormPrincipal.dfm</Transaction>
   </Transactions>
 </BorlandProject>

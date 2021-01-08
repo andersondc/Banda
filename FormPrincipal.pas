@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls, DateUtils,
   Vcl.Imaging.pngimage, Vcl.StdCtrls, Vcl.Grids;
 
 type
@@ -60,6 +60,52 @@ type
     Image12: TImage;
     Image13: TImage;
     Label6: TLabel;
+    Image11: TImage;
+    Image14: TImage;
+    TabSheet10: TTabSheet;
+    Image15: TImage;
+    Image16: TImage;
+    Image17: TImage;
+    Image18: TImage;
+    PageControl1: TPageControl;
+    TabSheet11: TTabSheet;
+    StringGrid2: TStringGrid;
+    Panel9: TPanel;
+    Label7: TLabel;
+    Image19: TImage;
+    Image20: TImage;
+    Image21: TImage;
+    Edit6: TEdit;
+    TabSheet12: TTabSheet;
+    Label8: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Panel10: TPanel;
+    Image23: TImage;
+    Image24: TImage;
+    Label13: TLabel;
+    ComboBox3: TComboBox;
+    Label9: TLabel;
+    ComboBox4: TComboBox;
+    StringGrid3: TStringGrid;
+    Panel11: TPanel;
+    Image22: TImage;
+    Image25: TImage;
+    Image26: TImage;
+    DateTimePicker1: TDateTimePicker;
+    Label10: TLabel;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    GroupBox1: TGroupBox;
+    vMes: TComboBox;
+    Button6: TButton;
+    FundoTit1: TImage;
+    Tit1: TLabel;
+    FundoTit2: TImage;
+    Tit2: TLabel;
+    FundoTitE: TImage;
+    titE: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Image1Click(Sender: TObject);
     procedure Image2Click(Sender: TObject);
@@ -73,6 +119,9 @@ type
     procedure Image8Click(Sender: TObject);
     procedure Image12Click(Sender: TObject);
     procedure Image13Click(Sender: TObject);
+    procedure Image14Click(Sender: TObject);
+    procedure Image11Click(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { Private declarations }
   public
@@ -91,12 +140,30 @@ begin
   self.free;         //usado somente se estiver dentro de uma form ou datamodule
   application.free;  //se o objeto application estiver disponível;
   exitprocess(0);    //por último, pra finalizar.
+end;
+
+procedure TFPrincipal.FormResize(Sender: TObject);
+begin
+  Tit1.Left:=FundoTit1.Width-Tit1.Width-10;
+  Tit1.Top:=2;
+
+  Tit2.Left:=FundoTit1.Width-Tit2.Width-10;
+  Tit2.Top:=2;
+
+  TitE.Left:=Panel6.Width-TitE.Width-10;
+  TitE.Top:=2;
 
 end;
 
 procedure TFPrincipal.FormShow(Sender: TObject);
 begin
   Pags.ActivePageIndex:=0;
+  vMes.ItemIndex:=MonthOf(date)+1;
+end;
+
+procedure TFPrincipal.Image11Click(Sender: TObject);
+begin
+  Pags.ActivePageIndex:=6;
 end;
 
 procedure TFPrincipal.Image12Click(Sender: TObject);
@@ -107,6 +174,11 @@ end;
 procedure TFPrincipal.Image13Click(Sender: TObject);
 begin
   PagMusicos.ActivePageIndex:=0;
+end;
+
+procedure TFPrincipal.Image14Click(Sender: TObject);
+begin
+  Pags.ActivePageIndex:=0;
 end;
 
 procedure TFPrincipal.Image1Click(Sender: TObject);
