@@ -4,8 +4,9 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls, DateUtils,
-  Vcl.Imaging.pngimage, Vcl.StdCtrls, Vcl.Grids;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls, DateUtils, StrUtils,
+  Vcl.Imaging.pngimage, Vcl.StdCtrls, Vcl.Grids, System.JSON, REST.Types, REST.Client,
+  Data.Bind.Components, Data.Bind.ObjectScope, Vcl.WinXCalendars;
 
 type
   TFPrincipal = class(TForm)
@@ -28,7 +29,6 @@ type
     ListMus: TTabSheet;
     CadMus: TTabSheet;
     Panel4: TPanel;
-    MonthCalendar1: TMonthCalendar;
     Panel5: TPanel;
     Panel6: TPanel;
     PagEventos: TPageControl;
@@ -95,17 +95,31 @@ type
     DateTimePicker1: TDateTimePicker;
     Label10: TLabel;
     Button3: TButton;
-    Button4: TButton;
-    Button5: TButton;
-    GroupBox1: TGroupBox;
-    vMes: TComboBox;
-    Button6: TButton;
     FundoTit1: TImage;
     Tit1: TLabel;
     FundoTit2: TImage;
     Tit2: TLabel;
     FundoTitE: TImage;
     titE: TLabel;
+    GroupBox2: TGroupBox;
+    ListAux: TListBox;
+    ListFer: TComboBox;
+    Panel12: TPanel;
+    Label11: TLabel;
+    LegFer: TLabel;
+    Label14: TLabel;
+    TitFer: TLabel;
+    Label16: TLabel;
+    DescFer: TLabel;
+    Button7: TButton;
+    RESTRequest1: TRESTRequest;
+    RESTClient1: TRESTClient;
+    RESTResponse1: TRESTResponse;
+    PAguarde: TPanel;
+    Label12: TLabel;
+    Status: TLabel;
+    CalendarView1: TCalendarView;
+    ListAux2: TListBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Image1Click(Sender: TObject);
     procedure Image2Click(Sender: TObject);
@@ -122,6 +136,8 @@ type
     procedure Image14Click(Sender: TObject);
     procedure Image11Click(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure ListFerClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -135,6 +151,74 @@ implementation
 
 {$R *.dfm}
 
+procedure TFPrincipal.Button7Click(Sender: TObject);
+var
+  RESTClient1: TRESTClient;
+  RESTRequest1: TRESTRequest;
+  RESTResponse : TRESTResponse;
+  strImageJSON : string;
+
+  i: integer;
+
+  Url: String;
+
+  ini: integer;
+  fim: integer;
+  auxTexto: string;
+begin
+  PAguarde.Top:=trunc((Screen.Height/2)-(PAguarde.Height/2));
+  PAguarde.Left:=trunc((Screen.Width/2)-(PAguarde.Width/2));
+  Status.Caption:='Recuperando Dados da Web...';
+  Status.Repaint;
+  PAguarde.Visible:=true;
+  PAguarde.Repaint;
+
+  url:='dadosbr.github.io/';
+
+  try
+    // Metodo REST para consumir dados da API
+    RESTClient1 := TRESTClient.Create(url); //url da API
+    RESTRequest1 := TRESTRequest.Create(nil);
+    RESTRequest1.Method := TRESTRequestMethod.rmGET;
+    //rmPOST;
+    RESTRequest1.Resource := 'feriados/nacionais.json';          // Camimho da API
+    RESTRequest1.Client := RESTClient1;
+    RESTRequest1.Timeout:= 600000;
+    RESTRequest1.Execute;
+    strImageJSON := RESTRequest1.Response.Content;     // Salva o Retorno da API
+  finally
+    RESTRequest1.Free;
+  end;
+
+  ListAux2.Clear;
+  ListAux2.Items.Text:=strImageJSON;
+
+  ListAux.Clear;
+
+  for i:=0 to ListAux2.Items.Count-1 do
+  begin
+    ListAux.Items.Add(trim(ListAux2.Items.Strings[i]));
+  end;
+
+  ListAux.ItemIndex:=0;
+
+  for i:=0 to ListAux.Items.Count-1 do
+  begin
+    if LeftStr(trim(ListAux.Items.Strings[i]),7)='"date":' then
+    begin
+      if RightStr(trim(ListAux.Items.Strings[i]),3)<>'"",' then
+      begin
+        auxTexto:=LeftStr(RightStr(trim(ListAux.Items.Strings[i]),7),5);
+        ListFer.Items.Add(auxTexto);
+      end;
+    end;
+  end;
+
+  PAguarde.Visible:=false;
+  ListFer.SetFocus;
+
+end;
+
 procedure TFPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   self.free;         //usado somente se estiver dentro de uma form ou datamodule
@@ -143,22 +227,25 @@ begin
 end;
 
 procedure TFPrincipal.FormResize(Sender: TObject);
+var
+  i: integer;
 begin
-  Tit1.Left:=FundoTit1.Width-Tit1.Width-10;
-  Tit1.Top:=2;
+  for i:=0 to 3 do
+  begin
+    Tit1.Left:=FundoTit1.Width-Tit1.Width-10;
+    Tit1.Top:=2;
 
-  Tit2.Left:=FundoTit1.Width-Tit2.Width-10;
-  Tit2.Top:=2;
+    Tit2.Left:=FundoTit1.Width-Tit2.Width-10;
+    Tit2.Top:=2;
 
-  TitE.Left:=Panel6.Width-TitE.Width-10;
-  TitE.Top:=2;
-
+    TitE.Left:=Panel6.Width-TitE.Width-10;
+    TitE.Top:=2;
+  end;
 end;
 
 procedure TFPrincipal.FormShow(Sender: TObject);
 begin
   Pags.ActivePageIndex:=0;
-  vMes.ItemIndex:=MonthOf(date)+1;
 end;
 
 procedure TFPrincipal.Image11Click(Sender: TObject);
@@ -224,6 +311,20 @@ end;
 procedure TFPrincipal.Image9Click(Sender: TObject);
 begin
   PagEventos.ActivePageIndex:=2;
+end;
+
+procedure TFPrincipal.ListFerClick(Sender: TObject);
+var
+  indice: integer;
+  indiceData: integer;
+begin
+  indice:=ListFer.ItemIndex;
+  indiceData:=ListAux.Items.
+  //.IndexOf('"date":"'+trim(ListFer.Items.Strings[indice])+'",');
+
+  ShowMessage(indiceData.ToString);
+//  TitFer.Caption:=trim(ListAux.Items.Strings[indiceData+1]);
+//  DescFer.Caption:=trim(ListAux.Items.Strings[indiceData+2]);
 end;
 
 end.

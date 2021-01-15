@@ -5369,7 +5369,7 @@
               Left = 16
               Top = 152
               Width = 465
-              Height = 28
+              Height = 26
               Font.Charset = ANSI_CHARSET
               Font.Color = clWindowText
               Font.Height = -16
@@ -6747,7 +6747,7 @@
               Left = 16
               Top = 43
               Width = 465
-              Height = 28
+              Height = 26
               Font.Charset = ANSI_CHARSET
               Font.Color = clWindowText
               Font.Height = -16
@@ -6774,7 +6774,7 @@
               Left = 17
               Top = 99
               Width = 465
-              Height = 28
+              Height = 26
               Font.Charset = ANSI_CHARSET
               Font.Color = clWindowText
               Font.Height = -16
@@ -7293,100 +7293,200 @@
         object Panel4: TPanel
           Left = 0
           Top = 0
-          Width = 228
+          Width = 300
           Height = 619
           Align = alLeft
           Color = clWhite
           ParentBackground = False
           TabOrder = 0
-          object MonthCalendar1: TMonthCalendar
+          object GroupBox2: TGroupBox
+            Left = 1
+            Top = 289
+            Width = 298
+            Height = 329
+            Align = alClient
+            Caption = 'Feriados Nacionais'
+            TabOrder = 0
+            ExplicitLeft = 0
+            ExplicitTop = 425
+            ExplicitHeight = 185
+            object ListFer: TComboBox
+              Left = 11
+              Top = 20
+              Width = 150
+              Height = 30
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -19
+              Font.Name = 'Arial'
+              Font.Style = [fsBold]
+              ParentFont = False
+              TabOrder = 0
+              OnClick = ListFerClick
+            end
+            object Panel12: TPanel
+              Left = 11
+              Top = 71
+              Width = 266
+              Height = 98
+              Color = clWhite
+              ParentBackground = False
+              TabOrder = 1
+              object Label11: TLabel
+                Left = 1
+                Top = 57
+                Width = 264
+                Height = 14
+                Align = alTop
+                Caption = 'Legisla'#231#227'o:'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -11
+                Font.Name = 'Arial'
+                Font.Style = []
+                ParentFont = False
+                ExplicitLeft = -4
+                ExplicitTop = 63
+              end
+              object LegFer: TLabel
+                Left = 1
+                Top = 71
+                Width = 264
+                Height = 14
+                Align = alTop
+                Caption = '...'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -11
+                Font.Name = 'Arial'
+                Font.Style = [fsBold]
+                ParentFont = False
+                WordWrap = True
+                ExplicitWidth = 9
+              end
+              object Label14: TLabel
+                Left = 1
+                Top = 1
+                Width = 264
+                Height = 14
+                Align = alTop
+                Caption = 'T'#237'tulo:'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -11
+                Font.Name = 'Arial'
+                Font.Style = []
+                ParentFont = False
+                ExplicitWidth = 28
+              end
+              object TitFer: TLabel
+                Left = 1
+                Top = 15
+                Width = 264
+                Height = 14
+                Align = alTop
+                Caption = '...'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -11
+                Font.Name = 'Arial'
+                Font.Style = [fsBold]
+                ParentFont = False
+                WordWrap = True
+                ExplicitWidth = 9
+              end
+              object Label16: TLabel
+                Left = 1
+                Top = 29
+                Width = 264
+                Height = 14
+                Align = alTop
+                Caption = 'Descri'#231#227'o:'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -11
+                Font.Name = 'Arial'
+                Font.Style = []
+                ParentFont = False
+                ExplicitWidth = 52
+              end
+              object DescFer: TLabel
+                Left = 1
+                Top = 43
+                Width = 264
+                Height = 14
+                Align = alTop
+                Caption = '...'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -11
+                Font.Name = 'Arial'
+                Font.Style = [fsBold]
+                ParentFont = False
+                WordWrap = True
+                ExplicitWidth = 9
+              end
+            end
+            object Button7: TButton
+              Left = 167
+              Top = 16
+              Width = 126
+              Height = 33
+              Caption = 'Feriados Web'
+              TabOrder = 2
+              OnClick = Button7Click
+            end
+          end
+          object CalendarView1: TCalendarView
             Left = 1
             Top = 1
-            Width = 226
-            Height = 160
+            Width = 298
+            Height = 288
             Align = alTop
-            Date = 44202.000000000000000000
-            Font.Charset = ANSI_CHARSET
+            Date = 44210.000000000000000000
+            Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
-            Font.Height = -21
-            Font.Name = 'Arial'
+            Font.Height = -20
+            Font.Name = 'Segoe UI'
             Font.Style = []
+            HeaderInfo.DaysOfWeekFont.Charset = DEFAULT_CHARSET
+            HeaderInfo.DaysOfWeekFont.Color = clWindowText
+            HeaderInfo.DaysOfWeekFont.Height = -13
+            HeaderInfo.DaysOfWeekFont.Name = 'Segoe UI'
+            HeaderInfo.DaysOfWeekFont.Style = []
+            HeaderInfo.Font.Charset = DEFAULT_CHARSET
+            HeaderInfo.Font.Color = clWindowText
+            HeaderInfo.Font.Height = -20
+            HeaderInfo.Font.Name = 'Segoe UI'
+            HeaderInfo.Font.Style = []
             ParentFont = False
-            TabOrder = 0
-          end
-          object Button4: TButton
-            Left = 1
-            Top = 167
-            Width = 221
-            Height = 25
-            Caption = 'Ver Eventos de Hoje'
             TabOrder = 1
-          end
-          object Button5: TButton
-            Left = 1
-            Top = 198
-            Width = 221
-            Height = 25
-            Caption = 'Ver Eventos desse M'#234's'
-            TabOrder = 2
-          end
-          object GroupBox1: TGroupBox
-            Left = 1
-            Top = 229
-            Width = 221
-            Height = 92
-            Caption = 'Ver Eventos do M'#234's:'
-            TabOrder = 3
-            object vMes: TComboBox
-              Left = 16
-              Top = 24
-              Width = 185
-              Height = 25
-              TabOrder = 0
-              Items.Strings = (
-                'Janeiro'
-                'Fevereiro'
-                'Mar'#231'o'
-                'Abril'
-                'Maio'
-                'Junho'
-                'Julho'
-                'Agosto'
-                'Setembro'
-                'Outubro'
-                'Novembro'
-                'Dezembro')
-            end
-            object Button6: TButton
-              Left = 151
-              Top = 55
-              Width = 50
-              Height = 25
-              Caption = 'OK'
-              TabOrder = 1
-            end
+            ExplicitWidth = 226
           end
         end
         object Panel5: TPanel
-          Left = 228
+          Left = 300
           Top = 0
-          Width = 519
+          Width = 447
           Height = 619
           Align = alClient
           BevelOuter = bvNone
           TabOrder = 1
+          ExplicitLeft = 228
+          ExplicitWidth = 519
           object Panel6: TPanel
             Left = 0
             Top = 0
-            Width = 519
+            Width = 447
             Height = 59
             Align = alTop
             BevelOuter = bvNone
             TabOrder = 0
+            ExplicitWidth = 519
             object FundoTitE: TImage
               Left = 0
               Top = 0
-              Width = 519
+              Width = 447
               Height = 59
               Align = alClient
               Picture.Data = {
@@ -8309,29 +8409,34 @@
           object PagEventos: TPageControl
             Left = 0
             Top = 59
-            Width = 519
+            Width = 447
             Height = 560
-            ActivePage = Anotações
+            ActivePage = TabSheet9
             Align = alClient
             TabOrder = 1
             TabPosition = tpBottom
+            ExplicitWidth = 519
             object TabSheet7: TTabSheet
               Caption = 'Notifica'#231#245'es'
+              ExplicitWidth = 511
             end
             object TabSheet8: TTabSheet
               Caption = 'Cadastro de Eventos'
               ImageIndex = 1
+              ExplicitWidth = 511
             end
             object TabSheet9: TTabSheet
               Caption = 'Eventos Futuros'
               ImageIndex = 2
+              ExplicitWidth = 511
               object StringGrid3: TStringGrid
                 Left = 0
                 Top = 50
-                Width = 511
+                Width = 439
                 Height = 480
                 Align = alClient
                 TabOrder = 0
+                ExplicitWidth = 511
                 ColWidths = (
                   64
                   64
@@ -8342,11 +8447,12 @@
               object Panel11: TPanel
                 Left = 0
                 Top = 0
-                Width = 511
+                Width = 439
                 Height = 50
                 Align = alTop
                 BevelOuter = bvNone
                 TabOrder = 1
+                ExplicitWidth = 511
                 object Image22: TImage
                   Left = 2
                   Top = 4
@@ -9074,10 +9180,27 @@
                   TabOrder = 1
                 end
               end
+              object ListAux: TListBox
+                Left = 3
+                Top = 352
+                Width = 150
+                Height = 175
+                ItemHeight = 17
+                TabOrder = 2
+              end
+              object ListAux2: TListBox
+                Left = 155
+                Top = 352
+                Width = 150
+                Height = 175
+                ItemHeight = 17
+                TabOrder = 3
+              end
             end
             object Anotações: TTabSheet
               Caption = 'Anota'#231#245'es'
               ImageIndex = 3
+              ExplicitWidth = 511
             end
           end
         end
@@ -9091,5 +9214,66 @@
         ImageIndex = 6
       end
     end
+  end
+  object PAguarde: TPanel
+    Left = 357
+    Top = 422
+    Width = 316
+    Height = 76
+    TabOrder = 1
+    Visible = False
+    object Label12: TLabel
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 308
+      Height = 27
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Aguarde...'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Arial Black'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitWidth = 106
+    end
+    object Status: TLabel
+      Left = 1
+      Top = 34
+      Width = 314
+      Height = 41
+      Align = alClient
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '...'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clGray
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      Layout = tlCenter
+      ExplicitLeft = 20
+      ExplicitTop = 2
+    end
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 704
+    Top = 16
+  end
+  object RESTClient1: TRESTClient
+    Params = <>
+    Left = 704
+    Top = 56
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 704
+    Top = 96
   end
 end

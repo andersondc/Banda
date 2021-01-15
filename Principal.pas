@@ -107,19 +107,19 @@ end;
 
 procedure TFLogin.bOKClick(Sender: TObject);
 begin
-  Status.Caption:='Verificando Login';  
+{  Status.Caption:='Verificando Login';
   Status.Visible:=true;
   Status.Repaint;
-  
+
   Resp.Lines.Clear;
   Resp.Lines.Text:=Login(UpperCase(trim(user.Text)),trim(pass.Text));
 
-  if length(trim(Resp.Text))<20 then 
+  if length(trim(Resp.Text))<20 then
   begin
     ShowMessage('Login Inválido!');
     Status.Visible:=false;
   end
-  else 
+  else
   begin
     Barra.Visible:=true;
     Barra.Repaint;
@@ -134,6 +134,12 @@ begin
     ListAux.Items:=user.Items;
     ListAUx.Items.SaveToFile(Caminho+'\idu.bmc');
   end;
+}
+  FormPrincipal.FPrincipal.ShowModal;
+  Principal.FLogin.Close;
+  Principal.FLogin.Free;
+  close;
+
 end;
 
 procedure TFLogin.FormShow(Sender: TObject);
